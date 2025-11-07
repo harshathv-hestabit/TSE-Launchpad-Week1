@@ -1,0 +1,12 @@
+[
+  {
+    "method": "fs.readFile (Buffer)",
+    "timeTaken": "619.023",
+    "memoryUsed": "94.617"
+  },
+  {
+    "method": "fs.createReadStream (Stream)",
+    "timeTaken": "666.261",
+    "memoryUsed": "1.393"
+  }
+]
