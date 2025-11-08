@@ -1,0 +1,4 @@
+- first experience at using an Ubuntu OS
+- learned some basic bash commands
+- used filesystem functions in node js.
+- learned to benchmark performance metrics
