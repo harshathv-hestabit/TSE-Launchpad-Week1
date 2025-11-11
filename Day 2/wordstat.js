@@ -44,3 +44,15 @@ function getShortestWord(chunk) {
   }
   return shortest;
 }
+
+function processChunk(chunk, minLen){
+  let wordFreq = {};
+  chunk = chunk.filter(word => word.length >= minLen);
+
+  chunk.forEach(word => {
+    word = word.toLowerCase();
+    wordFreq[word] = (wordFreq[word] || 0) + 1;
+  });
+
+  return { totalWords: chunk.length, longestWord: getLongestWord(chunk), shortestWord: getShortestWord(chunk), uniqueWords: Object.keys(wordFreq) };
+}
