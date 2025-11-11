@@ -30,3 +30,17 @@ function readFileInChunks(filePath, chunkSize = 1000) {
     stream.on('error', reject);
   });
 }
+function getLongestWord(chunk) {
+  return chunk.reduce((longest, word) => word.length > longest.length ? word : longest, '');
+}
+function getShortestWord(chunk) {
+  if (chunk.length === 0) return null;
+
+  let shortest = chunk[0];
+  for (let i = 1; i < chunk.length; i++) {
+    if (chunk[i].length < shortest.length) {
+      shortest = chunk[i];
+    }
+  }
+  return shortest;
+}
