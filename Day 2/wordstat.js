@@ -1,3 +1,5 @@
+const { program } = require('commander');
+const {performance} = require('perf_hooks'); 
 const fs = require('fs');
 const readline = require('readline');
 
@@ -137,3 +139,29 @@ async function processFile(filePath, minLen = 0, unique = false, topN = 0, concu
     return metrics;
   }
 }
+
+program
+  .option('--file <file>', 'Path to the text file to process')
+  .option('--minLen <number>', 'Minimum word length to process', parseInt)
+  .option('--unique', 'Count unique words')
+  .option('--top <number>', 'Show top N words by frequency', parseInt, 10);
+program.parse(process.argv);
+
+const options = program.opts();
+
+(async () => {
+  if (!options.file) {
+    console.error('Please specify a file using --file option');
+    return;
+  }
+
+  const concurrencyLevels = [8];
+  const allMetrics = [];
+
+  for (const level of concurrencyLevels) {
+    const metrics = await processFile(options.file, options.minLen || 0, options.unique, options.top, level);
+    allMetrics.push(metrics);
+    console.log(`Finished processing with concurrency ${level}: ${metrics.timeMs.toFixed(2)}ms`);
+  }
+
+})();
