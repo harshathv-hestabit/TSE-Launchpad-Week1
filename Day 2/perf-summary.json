@@ -1,0 +1,52 @@
+[
+  {
+    "concurrency": 8,
+    "totalWords": 160750,
+    "longestWord": "pellentesque,",
+    "shortestWord": "metus",
+    "uniqueWords": 369,
+    "topWords": [
+      {
+        "word": "mauris",
+        "freq": 234
+      },
+      {
+        "word": "vestibulum",
+        "freq": 234
+      },
+      {
+        "word": "vitae",
+        "freq": 234
+      },
+      {
+        "word": "donec",
+        "freq": 234
+      },
+      {
+        "word": "nulla",
+        "freq": 234
+      },
+      {
+        "word": "pellentesque",
+        "freq": 234
+      },
+      {
+        "word": "malesuada",
+        "freq": 234
+      },
+      {
+        "word": "vivamus",
+        "freq": 234
+      },
+      {
+        "word": "aliquam",
+        "freq": 234
+      },
+      {
+        "word": "consectetur",
+        "freq": 234
+      }
+    ],
+    "timeMs": 58.606640000000006
+  }
+]
