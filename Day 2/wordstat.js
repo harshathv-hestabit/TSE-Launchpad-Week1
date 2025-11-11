@@ -164,4 +164,6 @@ const options = program.opts();
     console.log(`Finished processing with concurrency ${level}: ${metrics.timeMs.toFixed(2)}ms`);
   }
 
+  fs.writeFileSync('perf-summary.json', JSON.stringify(allMetrics, null, 2), 'utf-8');
+  console.log('Metrics saved to perf-summary.json');
 })();
